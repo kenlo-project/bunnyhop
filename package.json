@@ -24,6 +24,9 @@
       ]
     ]
   },
+  "publishConfig": {
+    "access": "restricted"
+  },
   "ava": {
     "require": "babel-register",
     "babel": "inherit"
