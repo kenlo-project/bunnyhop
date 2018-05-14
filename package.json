@@ -1,9 +1,9 @@
 {
-  "name": "@autolotto/bunnyhop",
+  "name": "@kenlo/bunnyhop",
   "version": "2.4.3",
   "main": "build/index.js",
   "license": "MIT",
-  "repository": "https://github.com/autolotto/bunnyhop",
+  "repository": "https://github.com/kenlo-project/bunnyhop",
   "scripts": {
     "release": "npm run build:clean && npm run build && np",
     "build": "babel src -s -d build --ignore src/example,src/**/*.test.js",
