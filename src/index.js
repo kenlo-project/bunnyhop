@@ -38,10 +38,18 @@ function BunnyHop (serviceName, options = {}) {
      */
   });
 
+  if (options.connectionName) {
+    options.amqpConfig = {
+      clientProperties: {
+        connection_name: options.connectionName
+      }
+    }
+  }
+
   let hasCustomEngine = options.engine !== BuiltInEngines.DefaultEngine;
   let registeredPlugins = [options.engine];
 
-  const pluginManagerPromise = options.connectionManager(options.url)
+  const pluginManagerPromise = options.connectionManager(options.url, options.amqpConfig)
     .then(({ channel, connection }) => {
       const pluginManager = Plugins({ channel, connection, options, serviceName });
       pluginManager.initalizePlugins(registeredPlugins);

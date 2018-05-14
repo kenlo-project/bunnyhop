@@ -23,13 +23,14 @@ async function close (closable) {
  * Connection function to AMQP host
  *
  * @param {string} amqpUrl
+ * @param {object} options
  * @return {Promise.<{connection: *, channel: *}>}
  */
-module.exports = async function connect (amqpUrl) {
+module.exports = async function connect (amqpUrl, options) {
   let connection;
   let channel;
 
-  connection = await amqp.connect(amqpUrl)
+  connection = await amqp.connect(amqpUrl, options)
     .then(connection => {
       log.info(`Connected to amqp host on ${amqpUrl}. Creating channel.`);
       return connection;
