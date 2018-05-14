@@ -1,6 +1,6 @@
 {
   "name": "@kenlo/bunnyhop",
-  "version": "2.4.4",
+  "version": "2.4.3",
   "main": "build/index.js",
   "license": "MIT",
   "repository": "https://github.com/kenlo-project/bunnyhop",
